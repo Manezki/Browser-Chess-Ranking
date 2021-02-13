@@ -9,6 +9,7 @@ const PlayerDisplay = (props) => {
         <tr>
             <td>{player.ranking}</td>
             <td>{player.name}</td>
+            {/* TODO: Limit the number of decimal points */}
             <td>{player.elo}</td> 
         </tr>
     )

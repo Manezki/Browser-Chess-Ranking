@@ -32,6 +32,8 @@ const Form = ({players, setPlayers}) => {
         const newPlayers = players.filter( (player) => !([player1.id, player2.id].includes(player.id)) ).concat([newPlayer1, newPlayer2])
 
         setPlayers(newPlayers)
+
+        // TODO: Post the match to server
     }
 
     return (
