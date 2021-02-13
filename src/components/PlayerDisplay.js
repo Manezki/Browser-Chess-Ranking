@@ -7,6 +7,7 @@ const PlayerDisplay = (props) => {
 
     return (
         <tr>
+            <td>{player.ranking}</td>
             <td>{player.name}</td>
             <td>{player.elo}</td> 
         </tr>
