@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import * as playerAPI from "./services/player";
+import DisplayPlayers from "./components/RankPlayers"
+
 
 const App = () => {
-  const players, setPlayers = useState([{
-      "name": "Janne",
-      "elo": 1200
-    },
-    {
-      "name": "Eva",
-      "elo": 1200
-    }
-  ])
+  const [players, setPlayers] = useState([{}])
   // History entries with 'datetime', 'player1', 'player2', 'winner'
-  const history, setHistory = useState([])
+  const [history, setHistory] = useState([])
+
+  useEffect( () => {
+    playerAPI.getAll()
+      .then( (players) => {
+        setPlayers(players)
+      })
+  }, [])
 
   return (
-    <div>
-    </div>
+    <DisplayPlayers players={players} />
   )
 }
 
