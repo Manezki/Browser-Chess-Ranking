@@ -4,7 +4,7 @@ import Form from "./Form"
 
 const DisplayMatches = (props) => {
 
-    const {history, players} = props
+    const {history, players, setPlayers} = props
 
     return (
         <div>
@@ -18,7 +18,7 @@ const DisplayMatches = (props) => {
                     </tr>
                 </thead>
             </table>
-            <Form players={players} />
+            <Form players={players} setPlayers={setPlayers}/>
             <table>
                 <tbody>
                     {history.map(match => {
