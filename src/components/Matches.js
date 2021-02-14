@@ -19,15 +19,15 @@ const DisplayMatches = (props) => {
                 </thead>
             </table>
             <Form players={players} setPlayers={setPlayers} history={history} setHistory={setHistory}/>
-            <table>
+            <table className="center">
                 <tbody>
                     {history.map(match => {
-                    <tr>
+                    return (<tr key={match.id}>
                         <td>{match.player1}</td>
                         <td>{match.player2}</td>
-                        <td>{match.outcome}</td>
+                        <td>{match.outcome == "player1" ? "Player 1 won" : match.outcome == "player2" ? "Player 2 won" : "It was a tie"}</td>
                         <td></td>
-                    </tr>
+                    </tr>)
                     })}
                 </tbody>
             </table>

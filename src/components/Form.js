@@ -34,7 +34,7 @@ const Form = ({players, setPlayers, history, setHistory}) => {
         const match = {"datetime": Date.now(),
                        "player1": player1.name,
                        "player2": player2.name,
-                       "winner": outcome
+                       "outcome": outcome
                     }
 
         playerAPI.update(newPlayer1.id, newPlayer1).then( () => {

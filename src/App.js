@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import * as playerAPI from "./services/player"
+import * as matchAPI from "./services/matches"
 import DisplayPlayers from "./components/DisplayPlayers"
 import Matches from "./components/Matches"
 
@@ -12,6 +13,10 @@ const App = () => {
     playerAPI.getAll()
       .then( (players) => {
         setPlayers(players)
+        matchAPI.getAll()
+          .then( (history) => {
+            setHistory(history)
+          })
       })
   }, [])
 
