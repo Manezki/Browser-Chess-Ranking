@@ -9,7 +9,6 @@ const getAll = () => {
 }
 
 const add = (match) => {
-  console.log(match);
   const request = axios.post(baseUrl, match)
   return request
     .then( (response) => response.data )

@@ -11,6 +11,7 @@ const PlayerDisplay = (props) => {
             <td>{player.name}</td>
             {/* TODO: Limit the number of decimal points */}
             <td>{player.elo}</td> 
+            <td></td>
         </tr>
     )
 

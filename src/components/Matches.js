@@ -4,11 +4,11 @@ import Form from "./Form"
 
 const DisplayMatches = (props) => {
 
-    const {history, players, setPlayers} = props
+    const {history, players, setPlayers, setHistory} = props
 
     return (
         <div>
-            <table>
+            <table className="center">
                 <thead>
                     <tr>
                         <th>Player 1</th>
@@ -18,7 +18,7 @@ const DisplayMatches = (props) => {
                     </tr>
                 </thead>
             </table>
-            <Form players={players} setPlayers={setPlayers}/>
+            <Form players={players} setPlayers={setPlayers} history={history} setHistory={setHistory}/>
             <table>
                 <tbody>
                     {history.map(match => {
@@ -26,6 +26,7 @@ const DisplayMatches = (props) => {
                         <td>{match.player1}</td>
                         <td>{match.player2}</td>
                         <td>{match.outcome}</td>
+                        <td></td>
                     </tr>
                     })}
                 </tbody>

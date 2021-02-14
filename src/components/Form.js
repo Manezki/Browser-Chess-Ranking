@@ -1,5 +1,7 @@
 
 import React from 'react';
+import * as playerAPI from "../services/player"
+import * as matchAPI from "../services/matches"
 
 const eloUpdate = (elo1, elo2, outcome) => {
     const P1 = (1.0 / (1.0 + Math.pow(10, ((elo2 - elo1) / 400))))
@@ -13,7 +15,7 @@ const eloUpdate = (elo1, elo2, outcome) => {
     return [newElo1, newElo2]
   }
 
-const Form = ({players, setPlayers}) => {
+const Form = ({players, setPlayers, history, setHistory}) => {
 
     const addMatch = (event) => {
         event.preventDefault()
@@ -29,33 +31,46 @@ const Form = ({players, setPlayers}) => {
         const newPlayer1 = {...player1, "elo": elo1}
         const newPlayer2 = {...player2, "elo": elo2}
 
-        const newPlayers = players.filter( (player) => !([player1.id, player2.id].includes(player.id)) ).concat([newPlayer1, newPlayer2])
+        const match = {"datetime": Date.now(),
+                       "player1": player1.name,
+                       "player2": player2.name,
+                       "winner": outcome
+                    }
 
-        setPlayers(newPlayers)
-
-        // TODO: Post the match to server
+        playerAPI.update(newPlayer1.id, newPlayer1).then( () => {
+            playerAPI.update(newPlayer2.id, newPlayer2).then( () => {
+                matchAPI.add(match).then( () => {
+                    matchAPI.getAll().then( (response) => {
+                        setHistory(response)
+                        playerAPI.getAll().then( (response) => {
+                            setPlayers(response)
+                        })
+                    })
+                })
+            })
+        })
     }
 
     return (
         <form onSubmit={addMatch}>
-            <table>
+            <table className="center">
                 <tbody>
                     <tr>
                         <td>
                             <label htmlFor="player1"></label>
-                            <select name="player1" id="player1">
+                            <select className="select" name="player1" id="player1">
                                 {players.map(player => <option key={player.id} value={player.name}>{player.name}</option>)}
                             </select>
                         </td>
                         <td>
                             <label htmlFor="player2"></label>
-                            <select name="player2" id="player2">
+                            <select className="select" name="player2" id="player2">
                                 {players.map(player => <option key={player.id} value={player.name}>{player.name}</option>)}
                             </select>
                         </td>
                         <td>
                             <label htmlFor="outcome"></label>
-                            <select name="outcome" id="outcome">
+                            <select className="select" name="outcome" id="outcome">
                                 <option value="player1">Winner is player 1</option>
                                 <option value="player2">Winner is player 2</option>
                                 <option value="tie">It's a tie</option>

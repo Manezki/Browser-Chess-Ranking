@@ -21,7 +21,8 @@ const App = () => {
       <h1>Friendly Chess Competition Amsterdamseweg</h1>
       <DisplayPlayers players={players} />
       <h2>Matches</h2>
-      <Matches history={history} players={players}/>
+      <hr></hr>
+      <Matches history={history} players={players} setPlayers={setPlayers} setHistory={setHistory}/>
       <Form players={players} setPlayers={setPlayers}/>
     </div>
   )

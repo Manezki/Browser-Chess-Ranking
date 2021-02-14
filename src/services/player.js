@@ -8,8 +8,8 @@ const getAll = () => {
     .then( (response) => response.data )
 }
 
-const update = (name, updatedPlayerState) => {
-  const updateURL = `${baseUrl}/${name}`
+const update = (id, updatedPlayerState) => {
+  const updateURL = `${baseUrl}/${id}`
   const request = axios.put(updateURL, updatedPlayerState)
   return request
     .then( (response) => {
