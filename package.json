@@ -1,25 +1,20 @@
 {
-  "name": "Pi-Dashboard",
+  "name": "browser-chess-ranking",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.21.1",
-    "express": "^4.17.1",
-    "json-server": "^0.16.3",
     "parcel-bundler": "^1.12.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "parcel build public/index.html"
+    "build": "parcel build public/index.html --public-url ."
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "eslintConfig": {},
   "browserslist": {
     "production": [
       ">0.2%",

@@ -1,26 +1,10 @@
-# Server to be run on RaspberryPi
+# Host Chess Ranking in a browser
 
 ## Developing
 
 To get started with the development
 
 ```
-npm install
-npm start
+yarn install
+yarn start
 ```
-
-## Updating on RaspberryPi
-
-Pull changes from Github
-
-```
-git pull --rebase
-```
-
-Build the new changes
-
-```
-npm run build
-```
-
-That's it, Nginx should take over from here

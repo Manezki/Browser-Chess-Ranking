@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Form from "./Form"
+import AddMatchForm from "./AddMatchForm"
 
 const DisplayMatches = (props) => {
 
@@ -18,7 +18,7 @@ const DisplayMatches = (props) => {
                     </tr>
                 </thead>
             </table>
-            <Form players={players} setPlayers={setPlayers} history={history} setHistory={setHistory}/>
+            <AddMatchForm players={players} setPlayers={setPlayers} history={history} setHistory={setHistory}/>
             <table className="center">
                 <tbody>
                     {history.map(match => {
@@ -31,12 +31,8 @@ const DisplayMatches = (props) => {
                     })}
                 </tbody>
             </table>
-
         </div>
-
-
     )
-
 }
 
 export default DisplayMatches

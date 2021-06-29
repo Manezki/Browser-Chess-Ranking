@@ -2,21 +2,14 @@
 import React from 'react';
 import PlayerDisplay from "./PlayerDisplay"
 
-const DisplayPlayers = (props) => {
+const DisplayPlayers = ({ players }) => {
 
-    const {players} = props
-    const rankedPlayers = players.map( (e) => {
-        return {...e}
-    })
-    rankedPlayers.sort((a, b) => parseFloat(b.elo) - parseFloat(a.elo))
+    const rankedPlayers = [...players]
+        .sort((a, b) => parseFloat(b.elo) - parseFloat(a.elo))
+    rankedPlayers.forEach((player, index) => player.ranking = index + 1)
 
-    var i;
-    for (i = 0; i < rankedPlayers.length; i++) {
-        rankedPlayers[i]["ranking"] = i + 1
-    }   
-
+    // TODO: Add player form
     return (
-
         <table className="center">
             <thead>
                 <tr>
@@ -29,12 +22,8 @@ const DisplayPlayers = (props) => {
             <tbody>
                 {rankedPlayers.map(player => <PlayerDisplay key={player.name} player={player} />)}
             </tbody>
-
         </table>
-        
-            
     )
-
 }
 
 export default DisplayPlayers

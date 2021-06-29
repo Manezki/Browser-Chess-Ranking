@@ -10,25 +10,18 @@ const App = () => {
   const [history, setHistory] = useState([])
 
   useEffect( () => {
-    playerAPI.getAll()
-      .then( (players) => {
-        setPlayers(players)
-        matchAPI.getAll()
-          .then( (history) => {
-            setHistory(history)
-          })
-      })
+    // setPlayers(playerAPI.getAll().concat([{name: "Janne", elo: 1200, id: 1 }]))
+    setPlayers(playerAPI.getAll())
+    setHistory(matchAPI.getAll())
   }, [])
 
 
   return (
     <div>
-      <h1>Friendly Chess Competition Amsterdamseweg</h1>
+      <h1>Friendly Browser Ranking</h1>
       <DisplayPlayers players={players} />
-      <h2>Matches</h2>
       <hr></hr>
       <Matches history={history} players={players} setPlayers={setPlayers} setHistory={setHistory}/>
-      <Form players={players} setPlayers={setPlayers}/>
     </div>
   )
 }

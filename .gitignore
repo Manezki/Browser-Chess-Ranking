@@ -1,6 +1,5 @@
 # Runtime files
 .cache
-__pycache__
 
 # Build
 dist

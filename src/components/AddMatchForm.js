@@ -15,7 +15,7 @@ const eloUpdate = (elo1, elo2, outcome) => {
     return [newElo1, newElo2]
   }
 
-const Form = ({players, setPlayers, history, setHistory}) => {
+const AddMatchForm = ({players, setPlayers, history, setHistory}) => {
 
     const addMatch = (event) => {
         event.preventDefault()
@@ -87,4 +87,4 @@ const Form = ({players, setPlayers, history, setHistory}) => {
 
 }
 
-export default Form
+export default AddMatchForm
