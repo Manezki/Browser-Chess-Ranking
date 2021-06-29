@@ -1,19 +1,19 @@
 
-import React from 'react';
+import React from 'react'
 
 const PlayerDisplay = (props) => {
 
-    const {player} = props
+  const { player } = props
 
-    return (
-        <tr>
-            <td>{player.ranking}</td>
-            <td>{player.name}</td>
-            {/* TODO: Limit the number of decimal points */}
-            <td>{player.elo}</td> 
-            <td></td>
-        </tr>
-    )
+  return (
+    <tr>
+      <td>{player.ranking}</td>
+      <td>{player.name}</td>
+      {/* TODO: Limit the number of decimal points */}
+      <td>{player.elo}</td>
+      <td></td>
+    </tr>
+  )
 
 }
 
