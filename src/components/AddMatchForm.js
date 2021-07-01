@@ -2,6 +2,7 @@
 import React from 'react'
 import * as playerAPI from '../services/player'
 import * as matchAPI from '../services/matches'
+import AddButton from './AddButton'
 
 const eloUpdate = (elo1, elo2, outcome) => {
   const P1 = (1.0 / (1.0 + Math.pow(10, ((elo2 - elo1) / 400))))
@@ -77,7 +78,7 @@ const AddMatchForm = ({ players, setPlayers, setHistory }) => {
               </select>
             </td>
             <td>
-              <button type="submit">+</button>
+              <AddButton onClick={addMatch} />
             </td>
           </tr>
         </tbody>
