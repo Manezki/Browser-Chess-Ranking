@@ -41,15 +41,19 @@ th {
   text-align: left;
 }
 
-button {
+.addButton {
   border: 0cm;
   border-radius: 3px;
-  background-color: #4bb0e7;
-  color: white;
   height: 24px;
   width: 30px;
   font-weight: 600;
-  padding: .2em .6em .2em .6em;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 select {
