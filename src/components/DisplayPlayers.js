@@ -1,14 +1,33 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import PlayerDisplay from './PlayerDisplay'
+import AddButton from './AddButton'
+import * as playerAPI from '../services/player'
 
-const DisplayPlayers = ({ players }) => {
+const DisplayPlayers = ({ players, setPlayers }) => {
+
+  const [inputName, setInputName] = useState('')
 
   const rankedPlayers = [...players]
     .sort((a, b) => parseFloat(b.elo) - parseFloat(a.elo))
   rankedPlayers.forEach((player, index) => player.ranking = index + 1)
 
-  // TODO: Add player form
+  const addPlayer = (event) => {
+    event.preventDefault()
+
+    if (!inputName) {
+      console.log('Empty input name submitted')
+      return
+    } else if (players.map((player) => player.name).includes(inputName)) {
+      console.log('Name already exists')
+      return
+    }
+
+    const newPlayer = playerAPI.addNew({ name: inputName })
+    setPlayers(players.concat(newPlayer))
+    setInputName('')
+  }
+
   return (
     <table className="center">
       <thead>
@@ -22,7 +41,26 @@ const DisplayPlayers = ({ players }) => {
       <tbody>
         {rankedPlayers.map(player => <PlayerDisplay key={player.name} player={player} />)}
       </tbody>
+      <tfoot>
+        <tr>
+          <td/>
+          <td>
+            <input
+              type="text"
+              value={inputName}
+              onChange={ ({ target }) => {
+                setInputName(target.value)} }
+              style={{ 'width': '80%' }}
+            />
+          </td>
+          <td>
+            {/* TODO: Disable when input name is empty */}
+            <AddButton onClick={ addPlayer } />
+          </td>
+        </tr>
+      </tfoot>
     </table>
+
   )
 }
 

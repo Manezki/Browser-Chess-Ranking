@@ -15,11 +15,10 @@ const App = () => {
     setHistory(matchAPI.getAll())
   }, [])
 
-
   return (
     <div>
       <h1>Friendly Browser Ranking</h1>
-      <DisplayPlayers players={players} />
+      <DisplayPlayers players={players} setPlayers={setPlayers} />
       <hr></hr>
       <Matches history={history} players={players} setPlayers={setPlayers} setHistory={setHistory}/>
     </div>
