@@ -78,7 +78,7 @@ const AddMatchForm = ({ players, setPlayers, setHistory }) => {
               </select>
             </td>
             <td>
-              <AddButton onClick={addMatch} />
+              <AddButton onClick={addMatch} title="Submit new match"/>
             </td>
           </tr>
         </tbody>

@@ -43,10 +43,17 @@ const DisplayPlayers = ({ players, setPlayers }) => {
       </tbody>
       <tfoot>
         <tr>
-          <td/>
+          <td>
+            <label
+              htmlFor="newPlayerNameInput">
+              New player
+            </label>
+          </td>
           <td>
             <input
               type="text"
+              name="newPlayerNameInput"
+              id="newPlayerNameInput"
               value={inputName}
               onChange={ ({ target }) => {
                 setInputName(target.value)} }
@@ -55,12 +62,11 @@ const DisplayPlayers = ({ players, setPlayers }) => {
           </td>
           <td>
             {/* TODO: Disable when input name is empty */}
-            <AddButton onClick={ addPlayer } />
+            <AddButton onClick={ addPlayer } title="Submit new player"/>
           </td>
         </tr>
       </tfoot>
     </table>
-
   )
 }
 
