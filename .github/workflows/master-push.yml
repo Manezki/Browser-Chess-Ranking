@@ -16,8 +16,14 @@ jobs:
         run: |
           yarn install
           yarn build
+
+      - name: Test 🧪
+        run: |
+          yarn test:unit
+
       - name: Lint 📝
         run: yarn eslint
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
