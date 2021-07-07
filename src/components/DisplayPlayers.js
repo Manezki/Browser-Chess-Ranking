@@ -8,7 +8,9 @@ const DisplayPlayers = ({ players, setPlayers }) => {
 
   const [inputName, setInputName] = useState('')
 
-  const rankedPlayers = [...players]
+  const rankedPlayers = players.map((player) => {
+    return { ...player }
+  })
     .sort((a, b) => parseFloat(b.elo) - parseFloat(a.elo))
   rankedPlayers.forEach((player, index) => player.ranking = index + 1)
 
