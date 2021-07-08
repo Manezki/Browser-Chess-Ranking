@@ -22,15 +22,15 @@ describe('Player service', () => {
     })
 
     test('Returned player has name, elo, and ID', () => {
-      const newPlayer = playerAPI.addNew({ name: 'B' })
+      const newPlayer = playerAPI.addNew('B')
       expect(newPlayer.name).toBe('B')
       expect(newPlayer.elo).toBe(1200)
       expect(newPlayer.id).toBeDefined()
     })
 
     test('Generates a unique ID to the new players', () => {
-      const newPlayerLeft = playerAPI.addNew({ name: 'B' })
-      const newPlayerRight = playerAPI.addNew({ name: 'C' })
+      const newPlayerLeft = playerAPI.addNew('B')
+      const newPlayerRight = playerAPI.addNew('C')
 
       expect(newPlayerLeft.id).not.toBe(newPlayerRight.id)
     })

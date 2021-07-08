@@ -24,12 +24,12 @@ describe('Matches service', () => {
     })
 
     test('Returned match has datetime, player1, player2, outcome, and ID defined', () => {
-      const newMatch = matchesAPI.addNew({
-        datetime: Date.parse('01-01-2021 00:00:00 GMT' ),
-        player1: { name: 'A', elo: 1200, id: 1 },
-        player2: { name: 'B', elo: 1200, id: 2 },
-        outcome: 'player1'
-      })
+      const newMatch = matchesAPI.addNew(
+        Date.parse('01-01-2021 00:00:00 GMT'),
+        { name: 'A', elo: 1200, id: 1 },
+        { name: 'B', elo: 1200, id: 2 },
+        'player1'
+      )
       expect(newMatch.datetime).toBe(1609459200000)
       expect(newMatch.player1).toEqual({ name: 'A', elo: 1200, id: 1 })
       expect(newMatch.player2).toEqual({ name: 'B', elo: 1200, id: 2 })
@@ -38,18 +38,18 @@ describe('Matches service', () => {
     })
 
     test('Generates a unique ID to the new players', () => {
-      const newMatchLeft = matchesAPI.addNew({
-        datetime: Date.parse('01-01-2021 00:00:00 GMT'),
-        player1: { name: 'A', elo: 1200, id: 1 },
-        player2: { name: 'B', elo: 1200, id: 2 },
-        outcome: 'player1'
-      })
-      const newMatchRight = matchesAPI.addNew({
-        datetime: Date.parse('01-01-2021 00:00:00 GMT'),
-        player1: { name: 'A', elo: 1200, id: 1 },
-        player2: { name: 'B', elo: 1200, id: 2 },
-        outcome: 'player1'
-      })
+      const newMatchLeft = matchesAPI.addNew(
+        Date.parse('01-01-2021 00:00:00 GMT'),
+        { name: 'A', elo: 1200, id: 1 },
+        { name: 'B', elo: 1200, id: 2 },
+        'player1'
+      )
+      const newMatchRight = matchesAPI.addNew(
+        Date.parse('01-01-2021 00:00:00 GMT'),
+        { name: 'A', elo: 1200, id: 1 },
+        { name: 'B', elo: 1200, id: 2 },
+        'player1'
+      )
 
       expect(newMatchLeft.id).not.toBe(newMatchRight.id)
     })

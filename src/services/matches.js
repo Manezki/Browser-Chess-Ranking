@@ -12,7 +12,7 @@ export const getAll = () => {
   return matchesData
 }
 
-export const addNew = ({ datetime, player1, player2, outcome }) => {
+export const addNew = (datetime, player1, player2, outcome) => {
   const matches = getAll()
   const newMatch = {
     datetime,

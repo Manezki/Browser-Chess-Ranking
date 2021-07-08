@@ -25,7 +25,7 @@ const DisplayPlayers = ({ players, setPlayers }) => {
       return
     }
 
-    const newPlayer = playerAPI.addNew({ name: inputName })
+    const newPlayer = playerAPI.addNew(inputName)
     setPlayers(players.concat(newPlayer))
     setInputName('')
   }

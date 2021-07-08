@@ -9,7 +9,7 @@ export const getAll = () => {
   return playersData
 }
 
-export const addNew = ({ name }) => {
+export const addNew = (name) => {
   const playersData = getAll()
   const newPlayer = {
     name,
