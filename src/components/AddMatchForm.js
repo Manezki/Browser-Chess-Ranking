@@ -40,7 +40,7 @@ const AddMatchForm = ({ players, setPlayers, setHistory }) => {
 
     playerAPI.update(newPlayer1.id, newPlayer1).then( () => {
       playerAPI.update(newPlayer2.id, newPlayer2).then( () => {
-        matchAPI.add(match).then( () => {
+        matchAPI.addNew(match).then( () => {
           matchAPI.getAll().then( (response) => {
             setHistory(response)
             playerAPI.getAll().then( (response) => {
