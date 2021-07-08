@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 
 /*
 Players have name, elo, id
@@ -13,7 +14,7 @@ export const addNew = ({ name }) => {
   const newPlayer = {
     name,
     elo: 1200,
-    id: Math.max(playersData.map(player => Number(player.id))) + 1
+    id: uuidv4()
   }
   localStorage.setItem('players', JSON.stringify(playersData.concat(newPlayer)))
   return newPlayer
