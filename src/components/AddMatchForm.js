@@ -16,7 +16,7 @@ const eloUpdate = (elo1, elo2, outcome) => {
   return [newElo1, newElo2]
 }
 
-const AddMatchForm = ({ players, setPlayers, setHistory }) => {
+const AddMatchForm = ({ players, setPlayers, history, setHistory }) => {
 
   const addMatch = (event) => {
     event.preventDefault()
@@ -29,27 +29,24 @@ const AddMatchForm = ({ players, setPlayers, setHistory }) => {
 
     const [elo1, elo2] = eloUpdate(player1.elo, player2.elo, outcomeNum)
 
-    const newPlayer1 = { ...player1, 'elo': elo1 }
-    const newPlayer2 = { ...player2, 'elo': elo2 }
+    const newMatch = matchAPI.addNew(Date.now(), player1, player2, outcome)
+    setHistory(history.concat([newMatch]))
 
-    const match = { 'datetime': Date.now(),
-      'player1': player1.name,
-      'player2': player2.name,
-      'outcome': outcome
-    }
+    const updatedPlayer1 = playerAPI.updatePlayer(player1.id, { elo: elo1 })
+    const updatedPlayer2 = playerAPI.updatePlayer(player2.id, { elo: elo2 })
 
-    playerAPI.update(newPlayer1.id, newPlayer1).then( () => {
-      playerAPI.update(newPlayer2.id, newPlayer2).then( () => {
-        matchAPI.addNew(match).then( () => {
-          matchAPI.getAll().then( (response) => {
-            setHistory(response)
-            playerAPI.getAll().then( (response) => {
-              setPlayers(response)
-            })
-          })
-        })
-      })
+    const updatedPlayers = players.map((player) => {
+      switch (player.id) {
+      case updatedPlayer1.id:
+        return updatedPlayer1
+      case updatedPlayer2.id:
+        return updatedPlayer2
+      default:
+        return player
+      }
     })
+
+    setPlayers(updatedPlayers)
   }
 
   return (
