@@ -6,11 +6,9 @@ import Matches from './components/Matches'
 
 const App = () => {
   const [players, setPlayers] = useState([])
-  // History entries with 'datetime', 'player1', 'player2', 'winner'
   const [history, setHistory] = useState([])
 
   useEffect( () => {
-    // setPlayers(playerAPI.getAll().concat([{name: "Janne", elo: 1200, id: 1 }]))
     setPlayers(playerAPI.getAll())
     setHistory(matchAPI.getAll())
   }, [])
