@@ -3,8 +3,8 @@ import React from 'react'
 import AddMatchForm from './AddMatchForm'
 
 export const outcomeText = (match) => {
-  if (!match.outcome) {
-    console.log('Missing outcome on match result')
+  if (typeof match.outcome === 'undefined') {
+    console.log('Missing outcome on match object')
     return 'Unknown'
   }
 

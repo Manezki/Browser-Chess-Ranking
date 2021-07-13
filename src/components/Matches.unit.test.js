@@ -28,4 +28,9 @@ describe('outcomeText', () => {
   test('Opposite match outcomes produce different outcomeTexts', () => {
     expect(outcomeText(testMatch)).not.toEqual(outcomeText({ ...testMatch, outcome: '0' }))
   })
+
+  test('Validation accepts match outcome for player 2 winning', () => {
+    // Match outcome 0. is interpreted as false, causing incorrectly rejecting the outcome
+    expect(outcomeText({ ...testMatch, outcome: 0. })).not.toBe('Unknown')
+  })
 })
