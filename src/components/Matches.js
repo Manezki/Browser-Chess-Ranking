@@ -8,7 +8,7 @@ export const outcomeText = (match) => {
     return 'Unknown'
   }
 
-  switch (match.outcome) {
+  switch (String(match.outcome)) {
   case '1':
     return 'Player 1 won'
   case '0':
