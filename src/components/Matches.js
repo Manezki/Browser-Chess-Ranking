@@ -40,7 +40,7 @@ const DisplayMatches = (props) => {
       <AddMatchForm players={players} history={history} setPlayers={setPlayers} setHistory={setHistory}/>
       <table className="center">
         <tbody>
-          {history.map(match => {
+          {[...history].sort((l, r) => -(l.datetime - r.datetime)).map(match => {
             return (<tr key={match.id}>
               <td>{match.player1.name}</td>
               <td>{match.player2.name}</td>
