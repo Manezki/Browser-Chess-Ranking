@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
   'datetime'
   'player1'
   'player2'
-  'outcome'
+  'outcome': 1. => player1 win, 0. player2 win
 */
 
 export const getAll = () => {

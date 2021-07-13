@@ -11,7 +11,7 @@ const testMatch = {
   datetime: Date.parse('01-01-2021 00:00:00 GMT'),
   player1: { name: 'A', elo: 1200, id: 1 },
   player2: { name: 'B', elo: 1200, id: 2 },
-  outcome: 'player1',
+  outcome: '1',
   id: 1
 }
 
