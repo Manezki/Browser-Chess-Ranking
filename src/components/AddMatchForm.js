@@ -99,23 +99,23 @@ const AddMatchForm = ({ players, setPlayers, history, setHistory }) => {
               </select>
             </td>
             <td>
-              <label htmlFor="outcome"></label>
-              <select
-                className="select"
-                name="outcome"
-                id="outcome"
-                value={outcome}
-                onChange={({ target: { value } }) => {setOutcome(value)}}
-                disabled={(!matchPlayer1 || !matchPlayer2)}
-              >
-                <option value={.5}>It&apos;s a tie</option>
-                <option value={1.}>Winner is player 1</option>
-                <option value={0.}>Winner is player 2</option>
-              </select>
-            </td>
-            <td>
-              {/* Disable with insufficient selections */}
-              <AddButton onClick={addMatch} title="Submit new match"/>
+              <div id="addMatchSubmissionContainer">
+                <label htmlFor="outcome"></label>
+                <select
+                  className="select"
+                  name="outcome"
+                  id="outcome"
+                  value={outcome}
+                  onChange={({ target: { value } }) => {setOutcome(value)}}
+                  disabled={(!matchPlayer1 || !matchPlayer2)}
+                >
+                  <option value={.5}>It&apos;s a tie</option>
+                  <option value={1.}>Winner is player 1</option>
+                  <option value={0.}>Winner is player 2</option>
+                </select>
+                {/* Disable with insufficient selections */}
+                <AddButton onClick={addMatch} title="Submit new match"/>
+              </div>
             </td>
           </tr>
         </tbody>

@@ -33,7 +33,6 @@ const DisplayMatches = (props) => {
             <th>Player 1</th>
             <th>Player 2</th>
             <th>Outcome</th>
-            <th></th>
           </tr>
         </thead>
       </table>
@@ -45,7 +44,6 @@ const DisplayMatches = (props) => {
               <td>{match.player1.name}</td>
               <td>{match.player2.name}</td>
               <td>{outcomeText(match)}</td>
-              <td></td>
             </tr>)
           })}
         </tbody>

@@ -37,7 +37,6 @@ const DisplayPlayers = ({ players, setPlayers }) => {
           <th>Rank</th>
           <th>Name</th>
           <th>Elo rating</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>

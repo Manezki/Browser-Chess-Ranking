@@ -41,6 +41,17 @@ th {
   text-align: left;
 }
 
+#addMatchSubmissionContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+#addMatchSubmissionContainer > select, option {
+  width: calc(100% - 24px - 1em);
+  margin-right: 1em;
+  text-overflow: ellipsis;
+}
+
 .addButton {
   border: 0cm;
   border-radius: 3px;
