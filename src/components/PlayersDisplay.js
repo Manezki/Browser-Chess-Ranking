@@ -4,7 +4,7 @@ import PlayerDisplay from './PlayerDisplay'
 import AddButton from './AddButton'
 import * as playerAPI from '../services/player'
 
-const DisplayPlayers = ({ players, setPlayers }) => {
+const PlayersDisplay = ({ players, setPlayers }) => {
 
   const [inputName, setInputName] = useState('')
 
@@ -71,4 +71,4 @@ const DisplayPlayers = ({ players, setPlayers }) => {
   )
 }
 
-export default DisplayPlayers
+export default PlayersDisplay

@@ -21,7 +21,7 @@ export const outcomeText = (match) => {
   }
 }
 
-const DisplayMatches = ({ history, players, setPlayers, setHistory }) => {
+const MatchesDisplay = ({ history, players, setPlayers, setHistory }) => {
 
   return (
     <div>
@@ -50,4 +50,4 @@ const DisplayMatches = ({ history, players, setPlayers, setHistory }) => {
   )
 }
 
-export default DisplayMatches
+export default MatchesDisplay

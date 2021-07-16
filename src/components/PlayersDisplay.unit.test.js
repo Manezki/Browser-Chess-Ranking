@@ -5,7 +5,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import DisplayPlayers from './DisplayPlayers'
+import PlayersDisplay from './PlayersDisplay'
 
 jest.spyOn(window.localStorage.__proto__, 'setItem')
 jest.spyOn(window.localStorage.__proto__, 'getItem')
@@ -36,7 +36,7 @@ describe('<DisplayPlayer />', () => {
       test('With valid arguments is appended to the \'players\' state', () => {
         const newPlayerName = 'B'
 
-        render(<DisplayPlayers players={players} setPlayers={setPlayers}/>)
+        render(<PlayersDisplay players={players} setPlayers={setPlayers}/>)
 
         userEvent.type(screen.getByLabelText('New player'), newPlayerName)
         userEvent.click(screen.getByTitle(/Submit new player/))

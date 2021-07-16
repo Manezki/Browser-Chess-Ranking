@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { outcomeText } from './Matches'
+import { outcomeText } from './MatchesDisplay'
 
 const testMatch = {
   datetime: Date.parse('01-01-2021 00:00:00 GMT'),

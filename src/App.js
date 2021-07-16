@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import * as playerAPI from './services/player'
 import * as matchAPI from './services/matches'
-import DisplayPlayers from './components/DisplayPlayers'
-import Matches from './components/Matches'
+import PlayersDisplay from './components/PlayersDisplay'
+import MatchesDisplay from './components/MatchesDisplay'
 
 const App = () => {
   const [players, setPlayers] = useState([])
@@ -16,9 +16,9 @@ const App = () => {
   return (
     <div>
       <h1>Friendly Browser Ranking</h1>
-      <DisplayPlayers players={players} setPlayers={setPlayers} />
+      <PlayersDisplay players={players} setPlayers={setPlayers} />
       <hr></hr>
-      <Matches history={history} players={players} setPlayers={setPlayers} setHistory={setHistory}/>
+      <MatchesDisplay history={history} players={players} setPlayers={setPlayers} setHistory={setHistory}/>
     </div>
   )
 }
