@@ -21,7 +21,7 @@ export const outcomeText = (match) => {
   }
 }
 
-const MatchesDisplay = ({ history, players, setPlayers, setHistory }) => {
+const MatchesDisplay = ({ matches, setMatches, players, setPlayers }) => {
 
   return (
     <div>
@@ -34,10 +34,10 @@ const MatchesDisplay = ({ history, players, setPlayers, setHistory }) => {
           </tr>
         </thead>
       </table>
-      <AddMatchForm players={players} history={history} setPlayers={setPlayers} setHistory={setHistory}/>
+      <AddMatchForm players={players} matches={matches} setPlayers={setPlayers} setMatches={setMatches}/>
       <table className="center">
         <tbody>
-          {[...history].sort((l, r) => -(l.datetime - r.datetime)).map(match => {
+          {[...matches].sort((l, r) => -(l.datetime - r.datetime)).map(match => {
             return (<tr key={match.id}>
               <td>{match.player1.name}</td>
               <td>{match.player2.name}</td>

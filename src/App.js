@@ -6,11 +6,11 @@ import MatchesDisplay from './components/MatchesDisplay'
 
 const App = () => {
   const [players, setPlayers] = useState([])
-  const [history, setHistory] = useState([])
+  const [matches, setMatches] = useState([])
 
   useEffect( () => {
     setPlayers(playerAPI.getAll())
-    setHistory(matchAPI.getAll())
+    setMatches(matchAPI.getAll())
   }, [])
 
   return (
@@ -18,7 +18,7 @@ const App = () => {
       <h1>Friendly Browser Ranking</h1>
       <PlayersDisplay players={players} setPlayers={setPlayers} />
       <hr></hr>
-      <MatchesDisplay history={history} players={players} setPlayers={setPlayers} setHistory={setHistory}/>
+      <MatchesDisplay matches={matches} players={players} setPlayers={setPlayers} setMatches={setMatches}/>
     </div>
   )
 }

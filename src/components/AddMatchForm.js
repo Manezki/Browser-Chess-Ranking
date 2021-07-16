@@ -17,7 +17,7 @@ const eloUpdate = (elo1, elo2, outcome) => {
   return [newElo1, newElo2]
 }
 
-const AddMatchForm = ({ players, setPlayers, history, setHistory }) => {
+const AddMatchForm = ({ players, setPlayers, matches, setMatches }) => {
 
   const [matchPlayer1, setMatchPlayer1] = useState(undefined)
   const [matchPlayer2, setMatchPlayer2] = useState(undefined)
@@ -48,7 +48,7 @@ const AddMatchForm = ({ players, setPlayers, history, setHistory }) => {
     const [elo1, elo2] = eloUpdate(player1.elo, player2.elo, outcome)
 
     const newMatch = matchAPI.addNew(Date.now(), player1, player2, outcome)
-    setHistory(history.concat([newMatch]))
+    setMatches(matches.concat([newMatch]))
 
     const updatedPlayer1 = playerAPI.updatePlayer(player1.id, { elo: elo1 })
     const updatedPlayer2 = playerAPI.updatePlayer(player2.id, { elo: elo2 })
