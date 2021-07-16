@@ -1,9 +1,7 @@
 
 import React from 'react'
 
-const PlayerDisplay = (props) => {
-
-  const { player } = props
+const PlayerDisplay = ({ player }) => {
 
   return (
     <tr>

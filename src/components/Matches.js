@@ -21,9 +21,7 @@ export const outcomeText = (match) => {
   }
 }
 
-const DisplayMatches = (props) => {
-
-  const { history, players, setPlayers, setHistory } = props
+const DisplayMatches = ({ history, players, setPlayers, setHistory }) => {
 
   return (
     <div>
