@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Friendly Browser Ranking</h1>
+      <h1>Elo ranking</h1>
       <PlayersDisplay players={players} setPlayers={setPlayers} />
       <hr></hr>
       <MatchesDisplay matches={matches} players={players} setPlayers={setPlayers} setMatches={setMatches}/>

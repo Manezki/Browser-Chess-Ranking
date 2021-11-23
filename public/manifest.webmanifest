@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Browser elo ranking",
+  "name": "Browser elo ranking",
   "icons": [
     {
       "src": "chess-queen-solid.svg",
