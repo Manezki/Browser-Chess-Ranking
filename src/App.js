@@ -34,6 +34,7 @@ const App = () => {
             Clearing your browser cache will delete the ranking!
           </p>
         </div>
+        <a href="https://github.com/Manezki/Browser-Elo-Ranking/issues">Improvements and issues</a>
       </footer>
     </div>
   )

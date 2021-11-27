@@ -103,3 +103,17 @@ select {
   border-radius: 3px;
   background-color: white;
 }
+
+a {
+  outline: none;
+  text-decoration: underline;
+  padding: 0em 0.5em
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: darkgray;
+}
