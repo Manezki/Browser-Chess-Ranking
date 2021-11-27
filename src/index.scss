@@ -14,15 +14,9 @@ body {
   align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 p {
   margin: 2px 0px 32px 0px;
 }
-
 
 h1 {
   margin: 20px 0px 5px 0px;
@@ -32,7 +26,6 @@ h1 {
 hr {
   width: 85%;
   border: 1px dotted #4bb0e7;
-
 }
 
 table {
@@ -42,9 +35,6 @@ table {
 th, td {
   width: 180px;
   font-family:'Courier New', Courier, monospace;
-}
-
-th {
   text-align: left;
 }
 
@@ -66,9 +56,11 @@ th {
   width: 30px;
   font-weight: 600;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.1);
   }
+
   &:active {
     transform: scale(0.9);
   }
