@@ -14,10 +14,10 @@ const App = () => {
   }, [])
 
   return (
-    <div class="main-container">
-      <div class="title-container">
+    <div className="main-container">
+      <div className="title-container">
         <h1>Elo ranking</h1>
-        <p class="subtitle">No login required, and your data is never sent anywhere.</p>
+        <p className="subtitle">No login required, and your data is never sent anywhere.</p>
       </div>
       <PlayersDisplay players={players} setPlayers={setPlayers} />
       <hr></hr>
