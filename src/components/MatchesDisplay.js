@@ -25,7 +25,7 @@ const MatchesDisplay = ({ matches, setMatches, players, setPlayers }) => {
 
   return (
     <div>
-      <table className="center">
+      <table>
         <thead>
           <tr>
             <th>Player 1</th>
@@ -35,7 +35,7 @@ const MatchesDisplay = ({ matches, setMatches, players, setPlayers }) => {
         </thead>
       </table>
       <AddMatchForm players={players} matches={matches} setPlayers={setPlayers} setMatches={setMatches}/>
-      <table className="center">
+      <table>
         <tbody>
           {[...matches].sort((l, r) => -(l.datetime - r.datetime)).map(match => {
             return (<tr key={match.id}>

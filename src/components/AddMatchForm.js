@@ -69,7 +69,7 @@ const AddMatchForm = ({ players, setPlayers, matches, setMatches }) => {
 
   return (
     <form onSubmit={addMatch}>
-      <table className="center">
+      <table>
         <tbody>
           <tr>
             <td>

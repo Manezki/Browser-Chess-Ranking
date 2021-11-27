@@ -31,7 +31,7 @@ const PlayersDisplay = ({ players, setPlayers }) => {
   }
 
   return (
-    <table className="center">
+    <table>
       <thead>
         <tr>
           <th>Rank</th>
