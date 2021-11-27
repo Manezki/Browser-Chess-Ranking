@@ -15,8 +15,10 @@ const App = () => {
 
   return (
     <div class="main-container">
-      <h1>Elo ranking</h1>
-      <p>Elo ranking on your browser. No logins required, and your data is never sent anywhere. Clearing your browser cache will however delete the ranking.</p>
+      <div class="title-container">
+        <h1>Elo ranking</h1>
+        <p class="subtitle">No login required, and your data is never sent anywhere.</p>
+      </div>
       <PlayersDisplay players={players} setPlayers={setPlayers} />
       <hr></hr>
       <MatchesDisplay matches={matches} players={players} setPlayers={setPlayers} setMatches={setMatches}/>
